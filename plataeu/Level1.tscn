@@ -1377,3 +1377,13 @@ tile_set = SubResource("TileSet_cove1")
 [node name="Player" parent="." unique_id=1702158464 instance=ExtResource("2_mc20k")]
 z_index = 20
 position = Vector2(155, 312)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1810285089]
+zoom = Vector2(2, 2)
+
+[node name="Label" type="Label" parent="Player/Camera2D" unique_id=1626876484]
+offset_left = 186.0
+offset_top = -149.0
+offset_right = 276.0
+offset_bottom = -126.0
+text = "Score: 1000"
