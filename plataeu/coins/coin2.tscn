@@ -1,33 +1,35 @@
 [gd_scene format=3 uid="uid://djpro1qqmhur"]
 
-[ext_resource type="Texture2D" uid="uid://bfmlpfkho76g4" path="res://assets/CoinsV2_outline_18x18res.png" id="1_6af7r"]
+[ext_resource type="Script" uid="uid://bylojh0femtfd" path="res://coins/coin_2.gd" id="1_canf7"]
+[ext_resource type="Texture2D" uid="uid://bfmlpfkho76g4" path="res://assets/CoinsV2_outline_18x18res.png" id="1_ern50"]
+[ext_resource type="AudioStream" uid="uid://bgmv4o5w4rucs" path="res://assets/Sounds/coin.wav" id="2_wr3a4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cr8ci"]
-atlas = ExtResource("1_6af7r")
+atlas = ExtResource("1_ern50")
 region = Rect2(0, 18, 18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hd28b"]
-atlas = ExtResource("1_6af7r")
+atlas = ExtResource("1_ern50")
 region = Rect2(18, 18, 18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcsmt"]
-atlas = ExtResource("1_6af7r")
+atlas = ExtResource("1_ern50")
 region = Rect2(36, 18, 18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xqcpp"]
-atlas = ExtResource("1_6af7r")
+atlas = ExtResource("1_ern50")
 region = Rect2(54, 18, 18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0l7s"]
-atlas = ExtResource("1_6af7r")
+atlas = ExtResource("1_ern50")
 region = Rect2(72, 18, 18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md0lk"]
-atlas = ExtResource("1_6af7r")
+atlas = ExtResource("1_ern50")
 region = Rect2(90, 18, 18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bscud"]
-atlas = ExtResource("1_6af7r")
+atlas = ExtResource("1_ern50")
 region = Rect2(108, 18, 18, 18)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2vejc"]
@@ -62,10 +64,17 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_7y5gs"]
 radius = 9.0
 
-[node name="Coin2" type="Node2D" unique_id=1975502475]
+[node name="Coin2" type="Area2D" unique_id=590068717]
+script = ExtResource("1_canf7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=49643559]
 sprite_frames = SubResource("SpriteFrames_2vejc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=539262534]
 shape = SubResource("CircleShape2D_7y5gs")
+
+[node name="CollectedSound" type="AudioStreamPlayer2D" parent="." unique_id=2134941958]
+stream = ExtResource("2_wr3a4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="CollectedSound" to="." method="_on_collected_sound_finished"]
