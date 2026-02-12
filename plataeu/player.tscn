@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cyl3r58cd8ae" path="res://assets/idle.png" id="3_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://cmvrwurnefrj3" path="res://assets/jump.png" id="4_dw050"]
 [ext_resource type="Texture2D" uid="uid://tjaeuxnma1ft" path="res://assets/run.png" id="5_b26j0"]
-[ext_resource type="Texture2D" uid="uid://ccq67ref1jrqf" path="res://icon.svg" id="6_2hs0m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
 atlas = ExtResource("2_2hs0m")
@@ -127,7 +126,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_op7ga")
 }],
 "loop": true,
-"name": &"attack",
+"name": &"attack_",
 "speed": 5.0
 }, {
 "frames": [{
@@ -200,17 +199,8 @@ script = ExtResource("1_sweqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1536572460]
 sprite_frames = SubResource("SpriteFrames_hiqhm")
-animation = &"attack"
-frame_progress = 0.55331683
+animation = &"attack_"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=575144472]
 position = Vector2(0, 25)
 shape = SubResource("CapsuleShape2D_tkwlq")
-
-[node name="Icon" type="Sprite2D" parent="." unique_id=1838896886]
-position = Vector2(45, 121)
-texture = ExtResource("6_2hs0m")
-
-[node name="Icon" type="Sprite2D" parent="Icon" unique_id=758157075]
-position = Vector2(127, 1)
-texture = ExtResource("6_2hs0m")
