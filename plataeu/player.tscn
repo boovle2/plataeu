@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://j6vcm0a03kvp"]
+[gd_scene format=3 uid="uid://bwnvqmg34k7tn"]
 
 [ext_resource type="Script" uid="uid://dq5li4lklb8b0" path="res://playermovement.gd" id="1_sweqy"]
 [ext_resource type="Texture2D" uid="uid://chwl4xk1vlisy" path="res://assets/attack.png" id="2_2hs0m"]

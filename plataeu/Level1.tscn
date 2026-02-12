@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://drukx6e3366mh"]
 
 [ext_resource type="Texture2D" uid="uid://dq8yt8j27f8ak" path="res://assets/Environment/tileset.png" id="1_kyxg0"]
-[ext_resource type="PackedScene" uid="uid://j6vcm0a03kvp" path="res://player.tscn" id="2_mc20k"]
+[ext_resource type="PackedScene" uid="uid://bwnvqmg34k7tn" path="res://player.tscn" id="2_mc20k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mc20k"]
 texture = ExtResource("1_kyxg0")
@@ -684,4 +684,4 @@ tile_map_data = PackedByteArray("AAAHABYAAAACAAsAAAAHABcAAAACAAwAAAAHABgAAAACAA0
 tile_set = SubResource("TileSet_cove1")
 
 [node name="Player" parent="." unique_id=1702158464 instance=ExtResource("2_mc20k")]
-position = Vector2(508, 373)
+position = Vector2(155, 312)
