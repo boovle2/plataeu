@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://blf5a41gehrp"]
+
+[ext_resource type="Texture2D" uid="uid://bfmlpfkho76g4" path="res://assets/CoinsV2_outline_18x18res.png" id="1_4y0be"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lma2s"]
+atlas = ExtResource("1_4y0be")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w15l2"]
+atlas = ExtResource("1_4y0be")
+region = Rect2(18, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jobix"]
+atlas = ExtResource("1_4y0be")
+region = Rect2(36, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf2v1"]
+atlas = ExtResource("1_4y0be")
+region = Rect2(54, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nx4n2"]
+atlas = ExtResource("1_4y0be")
+region = Rect2(72, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyc6q"]
+atlas = ExtResource("1_4y0be")
+region = Rect2(90, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxto6"]
+atlas = ExtResource("1_4y0be")
+region = Rect2(108, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hneg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lma2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w15l2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jobix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qf2v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nx4n2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyc6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxto6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vounr"]
+radius = 9.0
+
+[node name="Coin1" type="Node2D" unique_id=445727529]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=37424984]
+sprite_frames = SubResource("SpriteFrames_2hneg")
+frame_progress = 0.6414319
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1276212850]
+shape = SubResource("CircleShape2D_vounr")
