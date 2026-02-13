@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://oyms3r5wakso" path="res://assets/Environment/far-grounds.png" id="3_mlbie"]
 [ext_resource type="Texture2D" uid="uid://bewqx7u63v62g" path="res://assets/Environment/sea.png" id="4_s3sxq"]
 [ext_resource type="Texture2D" uid="uid://d20b5kd2y4qmu" path="res://assets/Environment/sky.png" id="5_5py54"]
-[ext_resource type="Script" uid="uid://cikyi7m6go33k" path="res://score.gd" id="7_mlbie"]
+[ext_resource type="Script" path="res://score.gd" id="7_mlbie"]
+[ext_resource type="PackedScene" uid="uid://cheg36hjj78sa" path="res://killzone.tscn" id="8_s3sxq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mc20k"]
 texture = ExtResource("1_kyxg0")
@@ -1348,6 +1349,8 @@ sources/7 = SubResource("TileSetAtlasSource_5g1s2")
 sources/8 = SubResource("TileSetAtlasSource_aiv1b")
 sources/9 = SubResource("TileSetAtlasSource_wapi5")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5py54"]
+
 [node name="Level1" type="Node2D" unique_id=106026940]
 
 [node name="TileMap" type="Node" parent="." unique_id=1138757319]
@@ -1383,6 +1386,8 @@ tile_set = SubResource("TileSet_cove1")
 [node name="Player" parent="." unique_id=1702158464 instance=ExtResource("2_mc20k")]
 z_index = 20
 position = Vector2(155, 312)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1810285089]
 zoom = Vector2(2, 2)
@@ -1395,3 +1400,11 @@ offset_right = 276.0
 offset_bottom = -126.0
 text = "Score: 0"
 script = ExtResource("7_mlbie")
+
+[node name="Killzone" parent="." unique_id=241323749 instance=ExtResource("8_s3sxq")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=204114073]
+position = Vector2(375, 494)
+shape = SubResource("WorldBoundaryShape2D_5py54")
