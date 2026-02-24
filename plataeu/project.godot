@@ -14,6 +14,10 @@ config/name="plataeu"
 run/main_scene="uid://drukx6e3366mh"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+GlobalButton="*uid://cgfmmxvv6ifol"
+
 [input]
 
 ui_accept={
