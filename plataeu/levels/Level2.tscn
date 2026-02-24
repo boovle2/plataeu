@@ -1,19 +1,19 @@
 [gd_scene format=4 uid="uid://byfkjkoul3dq4"]
 
-[ext_resource type="Script" uid="uid://qj6oqh3e6rk7" path="res://level_2.gd" id="1_6x3wt"]
-[ext_resource type="Texture2D" uid="uid://dq8yt8j27f8ak" path="res://assets/Environment/tileset.png" id="1_wwdpc"]
-[ext_resource type="Texture2D" uid="uid://ctoieaugchjdl" path="res://assets/Environment/clouds.png" id="2_6faey"]
-[ext_resource type="Texture2D" uid="uid://oyms3r5wakso" path="res://assets/Environment/far-grounds.png" id="3_nc7oo"]
-[ext_resource type="Texture2D" uid="uid://bewqx7u63v62g" path="res://assets/Environment/sea.png" id="4_6x3wt"]
-[ext_resource type="Texture2D" uid="uid://d20b5kd2y4qmu" path="res://assets/Environment/sky.png" id="5_3453u"]
-[ext_resource type="PackedScene" uid="uid://cheg36hjj78sa" path="res://killzone.tscn" id="6_46pvi"]
-[ext_resource type="PackedScene" uid="uid://bwnvqmg34k7tn" path="res://player.tscn" id="7_nc7oo"]
-[ext_resource type="PackedScene" uid="uid://djpro1qqmhur" path="res://coins/coin2.tscn" id="8_6x3wt"]
-[ext_resource type="PackedScene" uid="uid://blf5a41gehrp" path="res://coins/coin1.tscn" id="10_46pvi"]
-[ext_resource type="PackedScene" uid="uid://bvfeu34wtavki" path="res://coins/coin3.tscn" id="11_fvkd4"]
+[ext_resource type="Script" path="res://level_2.gd" id="1_p5th2"]
+[ext_resource type="Texture2D" uid="uid://dq8yt8j27f8ak" path="res://assets/Environment/tileset.png" id="2_v0cbu"]
+[ext_resource type="Texture2D" uid="uid://ctoieaugchjdl" path="res://assets/Environment/clouds.png" id="3_xcmrh"]
+[ext_resource type="Texture2D" uid="uid://oyms3r5wakso" path="res://assets/Environment/far-grounds.png" id="4_28og2"]
+[ext_resource type="Texture2D" uid="uid://bewqx7u63v62g" path="res://assets/Environment/sea.png" id="5_605o7"]
+[ext_resource type="Texture2D" uid="uid://d20b5kd2y4qmu" path="res://assets/Environment/sky.png" id="6_g6u6r"]
+[ext_resource type="PackedScene" path="res://killzone.tscn" id="7_pb71r"]
+[ext_resource type="PackedScene" uid="uid://bwnvqmg34k7tn" path="res://player.tscn" id="8_behg1"]
+[ext_resource type="PackedScene" uid="uid://djpro1qqmhur" path="res://coins/coin2.tscn" id="9_gwanj"]
+[ext_resource type="PackedScene" uid="uid://blf5a41gehrp" path="res://coins/coin1.tscn" id="10_nn1ti"]
+[ext_resource type="PackedScene" uid="uid://bvfeu34wtavki" path="res://coins/coin3.tscn" id="11_vfe3a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fvkd4"]
-texture = ExtResource("1_wwdpc")
+texture = ExtResource("2_v0cbu")
 0:0/0 = 0
 0:1/0 = 0
 2:1/0 = 0
@@ -651,7 +651,7 @@ texture = ExtResource("1_wwdpc")
 0:19/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pj4lr"]
-texture = ExtResource("2_6faey")
+texture = ExtResource("3_xcmrh")
 8:0/0 = 0
 9:0/0 = 0
 10:0/0 = 0
@@ -1069,7 +1069,7 @@ texture = ExtResource("2_6faey")
 33:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_00xh1"]
-texture = ExtResource("3_nc7oo")
+texture = ExtResource("4_28og2")
 16:0/0 = 0
 17:0/0 = 0
 16:1/0 = 0
@@ -1164,7 +1164,7 @@ texture = ExtResource("3_nc7oo")
 36:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tfmj"]
-texture = ExtResource("4_6x3wt")
+texture = ExtResource("5_605o7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1209,7 +1209,7 @@ texture = ExtResource("4_6x3wt")
 6:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jw1dd"]
-texture = ExtResource("5_3453u")
+texture = ExtResource("6_g6u6r")
 1:18/0 = 0
 2:18/0 = 0
 3:18/0 = 0
@@ -1353,7 +1353,7 @@ sources/8 = SubResource("TileSetAtlasSource_8tfmj")
 sources/9 = SubResource("TileSetAtlasSource_jw1dd")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0xi3"]
-texture = ExtResource("1_wwdpc")
+texture = ExtResource("2_v0cbu")
 0:0/0 = 0
 0:1/0 = 0
 2:1/0 = 0
@@ -1991,7 +1991,7 @@ texture = ExtResource("1_wwdpc")
 0:19/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nwnlh"]
-texture = ExtResource("2_6faey")
+texture = ExtResource("3_xcmrh")
 8:0/0 = 0
 9:0/0 = 0
 10:0/0 = 0
@@ -2409,7 +2409,7 @@ texture = ExtResource("2_6faey")
 33:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e3avg"]
-texture = ExtResource("3_nc7oo")
+texture = ExtResource("4_28og2")
 16:0/0 = 0
 17:0/0 = 0
 16:1/0 = 0
@@ -2504,7 +2504,7 @@ texture = ExtResource("3_nc7oo")
 36:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0rx21"]
-texture = ExtResource("4_6x3wt")
+texture = ExtResource("5_605o7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2549,7 +2549,7 @@ texture = ExtResource("4_6x3wt")
 6:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqrl8"]
-texture = ExtResource("5_3453u")
+texture = ExtResource("6_g6u6r")
 1:18/0 = 0
 2:18/0 = 0
 3:18/0 = 0
@@ -2695,7 +2695,7 @@ sources/9 = SubResource("TileSetAtlasSource_nqrl8")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mgfd6"]
 
 [node name="Level2" type="Node2D" unique_id=363612947]
-script = ExtResource("1_6x3wt")
+script = ExtResource("1_p5th2")
 
 [node name="TileMap" type="Node" parent="." unique_id=382269580]
 
@@ -2722,22 +2722,22 @@ tile_set = SubResource("TileSet_0xt02")
 tile_map_data = PackedByteArray("AAAZABYAAAAkAAsAAAAZABcAAAAkAAwAAAAZABgAAAAkAA0AAAAaABYAAAAlAAsAAAAaABcAAAAlAAwAAAAaABgAAAAlAA0AAAAbABYAAAAmAAsAAAAbABcAAAAmAAwAAAAbABgAAAAmAA0AAAAcABYAAAAoAAsAAAAcABcAAAAoAAwAAAAcABgAAAAoAA0AAAAdABYAAAApAAsAAAAdABcAAAApAAwAAAAdABgAAAApAA0AAAAeABYAAAAoAAsAAAAeABcAAAAoAAwAAAAeABgAAAAoAA0AAAAfABYAAAApAAsAAAAfABcAAAApAAwAAAAfABgAAAApAA0AAAAgABYAAAAoAAsAAAAgABcAAAAoAAwAAAAgABgAAAAoAA0AAAAhABYAAAAoAAsAAAAhABcAAAAoAAwAAAAhABgAAAAoAA0AAAAiABYAAAApAAsAAAAiABcAAAApAAwAAAAiABgAAAApAA0AAAAjABYAAAArAAsAAAAjABcAAAArAAwAAAAjABgAAAArAA0AAAAkABYAAAAsAAsAAAAkABcAAAAsAAwAAAAkABgAAAAsAA0AAAAlABYAAAAtAAsAAAAlABcAAAAtAAwAAAAlABgAAAAtAA0AAAA=")
 tile_set = SubResource("TileSet_fx3gb")
 
-[node name="Killzone" parent="." unique_id=241323749 instance=ExtResource("6_46pvi")]
+[node name="Killzone" parent="." unique_id=241323749 instance=ExtResource("7_pb71r")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=573925255]
 position = Vector2(1807, 650)
 shape = SubResource("WorldBoundaryShape2D_mgfd6")
 
-[node name="Player" parent="." unique_id=1702158464 instance=ExtResource("7_nc7oo")]
+[node name="Player" parent="." unique_id=1702158464 instance=ExtResource("8_behg1")]
 position = Vector2(57, 377)
 
 [node name="coins" type="Node" parent="." unique_id=1309301743]
 
-[node name="Coin2" parent="coins" unique_id=590068717 instance=ExtResource("8_6x3wt")]
+[node name="Coin2" parent="coins" unique_id=590068717 instance=ExtResource("9_gwanj")]
 position = Vector2(277, 337)
 
-[node name="Coin1" parent="coins" unique_id=2002110279 instance=ExtResource("10_46pvi")]
+[node name="Coin1" parent="coins" unique_id=2002110279 instance=ExtResource("10_nn1ti")]
 position = Vector2(461, 324)
 
-[node name="Coin3" parent="coins" unique_id=1578638125 instance=ExtResource("11_fvkd4")]
+[node name="Coin3" parent="coins" unique_id=1578638125 instance=ExtResource("11_vfe3a")]
 position = Vector2(594, 326)
