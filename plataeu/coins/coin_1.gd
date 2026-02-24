@@ -1,12 +1,12 @@
 extends Area2D
 @onready var collected_sound: AudioStreamPlayer2D = $CollectedSound
-@onready var score: Label = %score
 
-
+signal coin_collected
 
 func _on_body_entered(_body: Node2D) -> void:
 	collected_sound.play()
-	score._add_score(3)
+	coin_collected.emit(3)
+	queue_free()
 
 func _on_collected_sound_finished() -> void:
 	queue_free()

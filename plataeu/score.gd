@@ -1,8 +1,8 @@
 extends Label
-var totalscore: int = 0
-@onready var score: Label = %score
 
-func _add_score(score1) -> void:
-	totalscore += score1
-	print(totalscore) 
-	score.text = "Score: " + str(totalscore)
+
+var current_score = 0
+
+func _add_score(amount):
+	current_score += amount
+	text = "Score: " + str(current_score)
