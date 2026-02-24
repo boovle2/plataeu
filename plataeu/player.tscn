@@ -193,7 +193,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tkwlq"]
 radius = 9.0
-height = 52.0
+height = 44.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1702158464]
 collision_layer = 3
@@ -205,7 +205,7 @@ sprite_frames = SubResource("SpriteFrames_hiqhm")
 animation = &"attack_"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=575144472]
-position = Vector2(0, 25)
+position = Vector2(-1, 26)
 shape = SubResource("CapsuleShape2D_tkwlq")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1606899078]

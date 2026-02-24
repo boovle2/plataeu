@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://oyms3r5wakso" path="res://assets/Environment/far-grounds.png" id="3_mlbie"]
 [ext_resource type="Texture2D" uid="uid://bewqx7u63v62g" path="res://assets/Environment/sea.png" id="4_s3sxq"]
 [ext_resource type="Texture2D" uid="uid://d20b5kd2y4qmu" path="res://assets/Environment/sky.png" id="5_5py54"]
-[ext_resource type="PackedScene" path="res://killzone.tscn" id="8_s3sxq"]
+[ext_resource type="PackedScene" uid="uid://qsf5luod57b6" path="res://spikes.tscn" id="8_dkril"]
+[ext_resource type="PackedScene" uid="uid://r57xoxrbljl7" path="res://killzone.tscn" id="8_s3sxq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlbie"]
 texture = ExtResource("1_kyxg0")
@@ -1391,3 +1392,9 @@ position = Vector2(155, 312)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=204114073]
 position = Vector2(375, 494)
 shape = SubResource("WorldBoundaryShape2D_5py54")
+
+[node name="spikes" parent="." unique_id=1447488988 instance=ExtResource("8_dkril")]
+position = Vector2(362, 410)
+
+[node name="spikes2" parent="." unique_id=494499829 instance=ExtResource("8_dkril")]
+position = Vector2(681, 377)

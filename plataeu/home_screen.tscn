@@ -1,12 +1,12 @@
-[gd_scene format=4 uid="uid://dkws4kh1kfi7a"]
+[gd_scene format=4 uid="uid://df8dbb8rmtbs8"]
 
-[ext_resource type="Script" uid="uid://chafs0dd2eu3t" path="res://home_screen.gd" id="1_o6h2m"]
+[ext_resource type="Script" path="res://home_screen.gd" id="1_o6h2m"]
 [ext_resource type="Texture2D" uid="uid://dq8yt8j27f8ak" path="res://assets/Environment/tileset.png" id="1_xe7vm"]
 [ext_resource type="Texture2D" uid="uid://ctoieaugchjdl" path="res://assets/Environment/clouds.png" id="2_gf7oa"]
 [ext_resource type="Texture2D" uid="uid://oyms3r5wakso" path="res://assets/Environment/far-grounds.png" id="3_vivg1"]
 [ext_resource type="Texture2D" uid="uid://bewqx7u63v62g" path="res://assets/Environment/sea.png" id="4_o6h2m"]
 [ext_resource type="Texture2D" uid="uid://d20b5kd2y4qmu" path="res://assets/Environment/sky.png" id="5_ckqhc"]
-[ext_resource type="PackedScene" uid="uid://1g6apv8whucb" path="res://sunny_dragon.tscn" id="6_gf7oa"]
+[ext_resource type="PackedScene" path="res://sunny_dragon.tscn" id="6_gf7oa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2352u"]
 texture = ExtResource("1_xe7vm")
