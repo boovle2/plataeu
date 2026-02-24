@@ -1347,6 +1347,8 @@ sources/7 = SubResource("TileSetAtlasSource_5g1s2")
 sources/8 = SubResource("TileSetAtlasSource_aiv1b")
 sources/9 = SubResource("TileSetAtlasSource_wapi5")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5py54"]
+
 [node name="Level1" type="Node2D" unique_id=106026940]
 
 [node name="TileMap" type="Node" parent="." unique_id=1138757319]
@@ -1382,13 +1384,25 @@ tile_set = SubResource("TileSet_cove1")
 [node name="Player" parent="." unique_id=1702158464 instance=ExtResource("6_5k0vs")]
 z_index = 20
 position = Vector2(155, 312)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1810285089]
 zoom = Vector2(2, 2)
 
-[node name="Score" type="Label" parent="Player/Camera2D" unique_id=1626876484]
+[node name="score" type="Label" parent="Player/Camera2D" unique_id=1626876484]
+unique_name_in_owner = true
 offset_left = 186.0
 offset_top = -149.0
 offset_right = 276.0
 offset_bottom = -126.0
-text = "Score: 1000"
+text = "Score: 0"
+script = ExtResource("7_mlbie")
+
+[node name="Killzone" parent="." unique_id=241323749 instance=ExtResource("8_s3sxq")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=204114073]
+position = Vector2(375, 494)
+shape = SubResource("WorldBoundaryShape2D_5py54")
