@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://1g6apv8whucb"]
+
+[ext_resource type="Script" uid="uid://dua6bxl7fo3mg" path="res://sunny_dragon.gd" id="1_gc87c"]
+[ext_resource type="Texture2D" uid="uid://b7mit1282sn3p" path="res://assets/sunny-dragon-fly.png" id="1_rrpbk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc87c"]
+atlas = ExtResource("1_rrpbk")
+region = Rect2(0, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve5n0"]
+atlas = ExtResource("1_rrpbk")
+region = Rect2(192, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhltq"]
+atlas = ExtResource("1_rrpbk")
+region = Rect2(384, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbe8d"]
+atlas = ExtResource("1_rrpbk")
+region = Rect2(576, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow6n3"]
+atlas = ExtResource("1_rrpbk")
+region = Rect2(768, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igom8"]
+atlas = ExtResource("1_rrpbk")
+region = Rect2(960, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73o10"]
+atlas = ExtResource("1_rrpbk")
+region = Rect2(1152, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtjju"]
+atlas = ExtResource("1_rrpbk")
+region = Rect2(1344, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciy8b"]
+atlas = ExtResource("1_rrpbk")
+region = Rect2(1536, 0, 192, 176)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lmt2y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc87c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve5n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhltq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbe8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow6n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igom8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73o10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtjju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciy8b")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cuhsi"]
+radius = 8.0
+height = 48.0
+
+[node name="Sunny_dragon" type="CharacterBody2D" unique_id=1260045890]
+script = ExtResource("1_gc87c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2073533548]
+sprite_frames = SubResource("SpriteFrames_lmt2y")
+animation = &"flying"
+autoplay = "flying"
+frame_progress = 0.85602355
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=828564114]
+position = Vector2(-8, 24)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_cuhsi")
+
+[node name="Timer" type="Timer" parent="." unique_id=1781162045]
+unique_name_in_owner = true
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

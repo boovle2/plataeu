@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dghb2jabciojs"]
+
+[ext_resource type="Script" uid="uid://cgfmmxvv6ifol" path="res://button.gd" id="1_1t376"]
+
+[node name="LvlBtn" type="Button" unique_id=418159464]
+offset_right = 424.0
+offset_bottom = 208.0
+scale = Vector2(1.5, 1.5)
+text = "Level ..."
+script = ExtResource("1_1t376")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
