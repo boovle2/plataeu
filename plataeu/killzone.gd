@@ -4,11 +4,12 @@ extends Area2D
 
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	print("you died")
 	timer.start()
 
 
 
 func _on_timer_timeout() -> void:
+	timer.stop()
 	get_tree().reload_current_scene()
