@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ci3d0gmiflemg" path="res://spikes.gd" id="1_nrdsm"]
 [ext_resource type="Texture2D" uid="uid://50da7bi15an5" path="res://assets/Moving Spikes 32x32 scaled 64x64.png" id="1_s0g1x"]
-[ext_resource type="PackedScene" uid="uid://cvtr1clwenoyt" path="res://hurtbox.tscn" id="3_8fhau"]
+[ext_resource type="PackedScene" uid="uid://154aub6jrh7v" path="res://hitbox.tscn" id="3_8fhau"]
 
 [sub_resource type="Animation" id="Animation_nrdsm"]
 length = 3.2
@@ -57,7 +57,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Hurtbox/CollisionShape2D2:position")
+tracks/4/path = NodePath("hitbox/CollisionShape2D2:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -122,7 +122,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Hurtbox/CollisionShape2D2:position")
+tracks/4/path = NodePath("hitbox/CollisionShape2D2:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -153,11 +153,10 @@ autoplay = &"default"
 texture = ExtResource("1_s0g1x")
 hframes = 4
 vframes = 4
-frame = 2
+frame = 7
 
-[node name="Hurtbox" parent="." unique_id=1263386221 instance=ExtResource("3_8fhau")]
-collision_layer = 2
+[node name="hitbox" parent="." unique_id=1756588890 instance=ExtResource("3_8fhau")]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox" unique_id=1210419391]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox" unique_id=1210419391]
 position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_8fhau")

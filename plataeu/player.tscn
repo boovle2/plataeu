@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cmvrwurnefrj3" path="res://assets/jump.png" id="4_dw050"]
 [ext_resource type="Texture2D" uid="uid://tjaeuxnma1ft" path="res://assets/run.png" id="5_b26j0"]
 [ext_resource type="Script" uid="uid://cikyi7m6go33k" path="res://score.gd" id="6_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://cvtr1clwenoyt" path="res://hurtbox.tscn" id="8_dw050"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
 atlas = ExtResource("2_2hs0m")
@@ -133,7 +134,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack_",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -158,7 +159,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -172,7 +173,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -201,12 +202,16 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tkwlq"]
 radius = 9.0
 height = 44.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b26j0"]
+radius = 6.0
+height = 40.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1702158464]
 collision_layer = 3
@@ -215,7 +220,8 @@ script = ExtResource("1_sweqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1536572460]
 sprite_frames = SubResource("SpriteFrames_hiqhm")
-animation = &"hurt"
+animation = &"jump"
+frame_progress = 0.8689598
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=575144472]
 position = Vector2(-1, 26)
@@ -232,5 +238,12 @@ offset_right = 276.0
 offset_bottom = -126.0
 text = "Score: 0"
 script = ExtResource("6_2hs0m")
+
+[node name="Hurtbox" parent="." unique_id=1263386221 instance=ExtResource("8_dw050")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=300286081]
+position = Vector2(-1, 26)
+shape = SubResource("CapsuleShape2D_b26j0")
+debug_color = Color(0.9995212, 0, 0.124730505, 0.41960785)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_AnimatedSprite2D_animation_finished"]

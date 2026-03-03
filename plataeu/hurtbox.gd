@@ -1,7 +1,8 @@
-extends Area2D
-@onready var player: CharacterBody2D = $"."
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+class_name HurtBox extends Area2D
 
+func _ready() -> void:
+	connect("area_entered", Callable(self, "_on_area_entered"))
 
-func _on_body_entered(body: Node2D) -> void:
-	player.animated_sprite_2d.play("hurt")
+func _on_area_entered(hitbox: HitBox) -> void:
+	if owner.has_method("take_damage"):
+		owner.take_damage(hitbox.get_damage(), hitbox.global_position)
