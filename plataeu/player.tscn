@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dq5li4lklb8b0" path="res://playermovement.gd" id="1_sweqy"]
 [ext_resource type="Texture2D" uid="uid://chwl4xk1vlisy" path="res://assets/attack.png" id="2_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://cyl3r58cd8ae" path="res://assets/idle.png" id="3_1jxqw"]
+[ext_resource type="Texture2D" uid="uid://cke63eprajqb1" path="res://assets/hurt.png" id="3_dw050"]
 [ext_resource type="Texture2D" uid="uid://cmvrwurnefrj3" path="res://assets/jump.png" id="4_dw050"]
 [ext_resource type="Texture2D" uid="uid://tjaeuxnma1ft" path="res://assets/run.png" id="5_b26j0"]
 [ext_resource type="Script" uid="uid://cikyi7m6go33k" path="res://score.gd" id="6_2hs0m"]
@@ -38,6 +39,10 @@ region = Rect2(768, 0, 128, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_op7ga"]
 atlas = ExtResource("2_2hs0m")
 region = Rect2(896, 0, 128, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b26j0"]
+atlas = ExtResource("3_dw050")
+region = Rect2(0, 0, 128, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q13i1"]
 atlas = ExtResource("3_1jxqw")
@@ -132,6 +137,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_b26j0")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_q13i1")
 }, {
 "duration": 1.0,
@@ -202,7 +215,7 @@ script = ExtResource("1_sweqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1536572460]
 sprite_frames = SubResource("SpriteFrames_hiqhm")
-animation = &"attack_"
+animation = &"hurt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=575144472]
 position = Vector2(-1, 26)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ci3d0gmiflemg" path="res://spikes.gd" id="1_nrdsm"]
 [ext_resource type="Texture2D" uid="uid://50da7bi15an5" path="res://assets/Moving Spikes 32x32 scaled 64x64.png" id="1_s0g1x"]
-[ext_resource type="PackedScene" uid="uid://r57xoxrbljl7" path="res://killzone.tscn" id="3_8fhau"]
+[ext_resource type="PackedScene" uid="uid://cvtr1clwenoyt" path="res://hurtbox.tscn" id="3_8fhau"]
 
 [sub_resource type="Animation" id="Animation_nrdsm"]
 length = 3.2
@@ -57,19 +57,19 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Killzone/CollisionShape2D:position")
+tracks/4/path = NodePath("Hurtbox/CollisionShape2D2:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 24), Vector2(0, 24)]
+"values": [Vector2(0, 24)]
 }
 
 [sub_resource type="Animation" id="Animation_8fhau"]
 resource_name = "default"
-length = 3.5333333
+length = 4.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -122,14 +122,14 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Killzone/CollisionShape2D:position")
+tracks/4/path = NodePath("Hurtbox/CollisionShape2D2:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.46666667, 0.54, 1.01, 1.04, 1.5, 1.57, 2.02, 2.0666666, 2.5333333, 2.5666666, 2.96, 3.0333333, 3.5333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.53333336, 1.0666667, 1.6, 2.0333333, 2.5666666, 3.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(0, 35), Vector2(0, 35), Vector2(0, 17), Vector2(0, 17), Vector2(0, 0), Vector2(0, 0), Vector2(0, -15), Vector2(0, -15), Vector2(0, 0), Vector2(0, 0), Vector2(0, 17), Vector2(0, 17), Vector2(0, 35), Vector2(0, 35)]
+"values": [Vector2(0, 24), Vector2(0, 12), Vector2(0, -6), Vector2(0, -22), Vector2(0, -6), Vector2(0, 12), Vector2(0, 24)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ds4fp"]
@@ -138,8 +138,8 @@ _data = {
 &"default": SubResource("Animation_8fhau")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpwrc"]
-size = Vector2(64, 27)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fhau"]
+size = Vector2(58, 16)
 
 [node name="spikes" type="Area2D" unique_id=1447488988]
 scale = Vector2(0.5, 0.5)
@@ -153,11 +153,11 @@ autoplay = &"default"
 texture = ExtResource("1_s0g1x")
 hframes = 4
 vframes = 4
-frame = 7
+frame = 2
 
-[node name="Killzone" parent="." unique_id=241323749 instance=ExtResource("3_8fhau")]
+[node name="Hurtbox" parent="." unique_id=1263386221 instance=ExtResource("3_8fhau")]
+collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1080110659]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox" unique_id=1210419391]
 position = Vector2(0, 24)
-shape = SubResource("RectangleShape2D_tpwrc")
-debug_color = Color(0.9999997, 0.0046191565, 0.086252816, 0.41960785)
+shape = SubResource("RectangleShape2D_8fhau")

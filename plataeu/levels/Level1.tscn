@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://d20b5kd2y4qmu" path="res://assets/Environment/sky.png" id="5_5py54"]
 [ext_resource type="PackedScene" uid="uid://qsf5luod57b6" path="res://spikes.tscn" id="8_dkril"]
 [ext_resource type="PackedScene" uid="uid://r57xoxrbljl7" path="res://killzone.tscn" id="8_s3sxq"]
+[ext_resource type="PackedScene" uid="uid://djpro1qqmhur" path="res://coins/coin2.tscn" id="9_nn0v1"]
+[ext_resource type="PackedScene" uid="uid://bvfeu34wtavki" path="res://coins/coin3.tscn" id="10_kdcll"]
+[ext_resource type="PackedScene" uid="uid://blf5a41gehrp" path="res://coins/coin1.tscn" id="11_j4pg1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlbie"]
 texture = ExtResource("1_kyxg0")
@@ -1393,8 +1396,17 @@ position = Vector2(155, 312)
 position = Vector2(375, 494)
 shape = SubResource("WorldBoundaryShape2D_5py54")
 
-[node name="spikes" parent="." unique_id=1447488988 instance=ExtResource("8_dkril")]
-position = Vector2(362, 410)
+[node name="Coin2" parent="." unique_id=590068717 instance=ExtResource("9_nn0v1")]
+position = Vector2(360, 364)
 
-[node name="spikes2" parent="." unique_id=494499829 instance=ExtResource("8_dkril")]
-position = Vector2(681, 377)
+[node name="Coin3" parent="." unique_id=1578638125 instance=ExtResource("10_kdcll")]
+position = Vector2(561, 353)
+
+[node name="Coin1" parent="." unique_id=2002110279 instance=ExtResource("11_j4pg1")]
+position = Vector2(742, 330)
+
+[node name="Coin4" parent="." unique_id=446036332 instance=ExtResource("11_j4pg1")]
+position = Vector2(880, 149)
+
+[node name="spikes" parent="." unique_id=1447488988 instance=ExtResource("8_dkril")]
+position = Vector2(733, 364)
