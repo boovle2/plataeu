@@ -22,12 +22,15 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	# Movement
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := 0
 	
-	if direction != 0:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if not hurt:
+		direction = Input.get_axis("ui_left", "ui_right")
+		
+		if direction != 0:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	# Flip sprite
 	if direction > 0:
@@ -74,8 +77,8 @@ func take_damage(amount: int, from_position: Vector2) -> void:
 	hurt = true
 	
 	var direction = sign(global_position.x - from_position.x)
-	velocity.x = direction * 250
-	velocity.y = -200
+	velocity.x = direction * 10
+	velocity.y = -250
 	
 	animated_sprite_2d.play("hurt")
 	
