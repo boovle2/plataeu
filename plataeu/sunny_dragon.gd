@@ -5,6 +5,9 @@ extends CharacterBody2D
 
 var Speed = 300
 
+func _ready() -> void:
+	position.y = randf_range(40, 500)
+
 func _process(delta: float) -> void:
 	position.x += Speed * delta
 	if position.x > 5000.0:
