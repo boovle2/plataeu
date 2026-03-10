@@ -5,6 +5,8 @@ const JUMP_VELOCITY = -400.0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var smoke_trail: GPUParticles2D = $SmokeTrail
+@onready var landing: AnimatedSprite2D = $landing
 
 enum State {
 	IDLE,
@@ -21,10 +23,16 @@ enum State {
 }
 
 var state: State = State.IDLE
-var health = 10
+var health = 100
 var invulnerable = false
 var crouch_pressed = false
 
+
+func _process(delta: float) -> void:
+	if velocity.length() > 10 and is_on_floor():
+		smoke_trail.emitting = true
+	else:
+		smoke_trail.emitting = false
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -37,7 +45,7 @@ func _physics_process(delta):
 	elif direction < 0:
 		sprite.flip_h = true
 	
-	if velocity.y > 0 and animation_player.current_animation != "jump_attack":
+	if velocity.y > 0 and animation_player.current_animation != "jump_attack" and state != State.HURT :
 		state = State.FALL
 	
 	match state:
@@ -133,6 +141,7 @@ func fall_state(direction):
 	velocity.x = direction * SPEED
 	
 	if is_on_floor():
+		landing.play("landing_smoke")
 		state = State.IDLE
 
 func crouch_state(direction):
@@ -204,7 +213,12 @@ func _on_animation_player_animation_finished(anim_name):
 		state = State.CROUCH
 	
 	if anim_name == "hurt":
-		state = State.IDLE
+		if is_on_floor():
+			state = State.IDLE
+	
+	if anim_name == "death":
+		get_tree().reload_current_scene()
+	
 
 
 func take_damage(amount: int, from_position: Vector2):
@@ -225,5 +239,5 @@ func take_damage(amount: int, from_position: Vector2):
 	velocity.x = direction * 200
 	velocity.y = -250
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.5).timeout
 	invulnerable = false

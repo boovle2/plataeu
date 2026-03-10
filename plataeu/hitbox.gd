@@ -4,4 +4,4 @@ class_name HitBox extends Area2D
 
 func get_damage() -> int:
 	print("damage")
-	return damage + randi() % 7 - 3
+	return damage + 1
