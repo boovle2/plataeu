@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bvfeu34wtavki" path="res://coins/coin3.tscn" id="11_vfe3a"]
 [ext_resource type="PackedScene" path="res://portal.tscn" id="12_v0cbu"]
 [ext_resource type="PackedScene" path="res://confetti.tscn" id="13_xcmrh"]
-[ext_resource type="PackedScene" uid="uid://cvtr1clwenoyt" path="res://hurtbox.tscn" id="14_28og2"]
+[ext_resource type="PackedScene" uid="uid://dbmhip0xu7rav" path="res://goblin.tscn" id="14_28og2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fvkd4"]
 texture = ExtResource("2_v0cbu")
@@ -4041,9 +4041,6 @@ sources/9 = SubResource("TileSetAtlasSource_605o7")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mgfd6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_28og2"]
-size = Vector2(42, 36)
-
 [node name="Level2" type="Node2D" unique_id=363612947]
 script = ExtResource("1_p5th2")
 
@@ -4115,10 +4112,5 @@ position = Vector2(2287, 553)
 [node name="GPUParticles2D" parent="." unique_id=511871594 instance=ExtResource("13_xcmrh")]
 position = Vector2(2288, 553)
 
-[node name="Hurtbox" parent="." unique_id=1263386221 instance=ExtResource("14_28og2")]
-position = Vector2(536, 336)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=619122264]
-position = Vector2(8, 9)
-shape = SubResource("RectangleShape2D_28og2")
-debug_color = Color(0.992822, 0, 0.2531284, 0.41960785)
+[node name="Goblin" parent="." unique_id=1554246127 instance=ExtResource("14_28og2")]
+position = Vector2(512, 336)

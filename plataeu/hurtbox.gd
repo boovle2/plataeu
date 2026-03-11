@@ -1,5 +1,7 @@
 class_name HurtBox extends Area2D
 
+#hurtbox ontvang damage 
+
 func _ready() -> void:
 	connect("area_entered", Callable(self, "_on_area_entered"))
 
