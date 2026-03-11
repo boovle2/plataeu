@@ -8,6 +8,11 @@ const JUMP_VELOCITY = -400.0
 @onready var smoke_trail: GPUParticles2D = $SmokeTrail
 @onready var landing: AnimatedSprite2D = $landing
 
+@onready var collision_shape_stand_attack: CollisionShape2D = $hitbox/CollisionShape_stand_attack
+@onready var collision_shape_jump_attack: CollisionShape2D = $hitbox/CollisionShape_jump_attack
+@onready var collision_shape_crouch_attack: CollisionShape2D = $hitbox/CollisionShape_crouch_attack
+
+
 enum State {
 	IDLE,
 	RUN,
@@ -42,8 +47,14 @@ func _physics_process(delta):
 	
 	if direction > 0:
 		sprite.flip_h = false
+		collision_shape_stand_attack.position.x = 32
+		collision_shape_jump_attack.position.x = 29.5
+		collision_shape_crouch_attack.position.x = 26
 	elif direction < 0:
 		sprite.flip_h = true
+		collision_shape_stand_attack.position.x = -32
+		collision_shape_jump_attack.position.x = -29.5
+		collision_shape_crouch_attack.position.x = -26
 	
 	if velocity.y > 0 and animation_player.current_animation != "jump_attack" and state != State.HURT :
 		state = State.FALL
