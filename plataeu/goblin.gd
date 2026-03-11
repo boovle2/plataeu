@@ -61,6 +61,11 @@ func idle_state():
 	if !ray_cast_2d.is_colliding():
 		turn()
 
+func floor_ahead() -> bool:
+	ray_cast_2d.position.x = 16 * direction
+	ray_cast_2d.force_raycast_update()
+	return ray_cast_2d.is_colliding()
+
 func chase_state():
 	if player == null:
 		state = State.IDLE
@@ -68,10 +73,7 @@ func chase_state():
 	
 	var dir = sign(player.global_position.x - global_position.x)
 	
-	velocity.x = dir * SPEED * 1.5
-	
-	if !ray_cast_2d.is_colliding():
-		direction *= -1
+	direction = dir
 	
 	if dir > 0:
 		sprite_2d.flip_h = false
@@ -83,6 +85,13 @@ func chase_state():
 		collision_shape_hitbox.position.x = -28
 		collision_shape_attackrange.position.x = -26
 		ray_cast_2d.position.x *= -1
+	
+	if !floor_ahead():
+		velocity.x = 0
+		animation_player.play("idle")
+		return
+	
+	velocity.x = direction * SPEED * 1.5
 	
 	animation_player.play("run")
 
@@ -159,6 +168,9 @@ func _on_detection_box_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		player = body
 		state = State.CHASE
+
+func _on_detection_box_body_exited(body: Node2D) -> void:
+	state = State.IDLE
 
 func _on_attack_range_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
