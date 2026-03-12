@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
+const DASH_SPEED = 400.0
 const JUMP_VELOCITY = -400.0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -24,13 +25,17 @@ enum State {
 	JUMP_ATTACK,
 	CROUCH_ATTACK,
 	HURT,
-	DEATH
+	DEATH,
+	DASH
 }
 
 var state: State = State.IDLE
 var health = 100
 var invulnerable = false
 var crouch_pressed = false
+var dash_time = 0.2
+var dash_timer = 0.0
+var can_air_dash = true
 
 
 func _process(delta: float) -> void:
@@ -42,6 +47,9 @@ func _process(delta: float) -> void:
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+	
+	if is_on_floor():
+		can_air_dash = true
 	
 	var direction = Input.get_axis("ui_left", "ui_right")
 	
@@ -56,7 +64,7 @@ func _physics_process(delta):
 		collision_shape_jump_attack.position.x = -29.5
 		collision_shape_crouch_attack.position.x = -26
 	
-	if velocity.y > 0 and animation_player.current_animation != "jump_attack" and state != State.HURT :
+	if velocity.y > 0 and animation_player.current_animation != "jump_attack" and state != State.HURT and state != State.DASH:
 		state = State.FALL
 	
 	match state:
@@ -94,6 +102,9 @@ func _physics_process(delta):
 		State.DEATH:
 			death_state()
 	
+		State.DASH:
+			dash_state(direction)
+	
 	move_and_slide()
 
 
@@ -101,6 +112,7 @@ func idle_state(direction):
 	if Input.is_action_pressed("ui_down"):
 		state = State.CROUCH
 		return
+	
 	
 	animation_player.play("idle")
 	
@@ -113,6 +125,11 @@ func idle_state(direction):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		state = State.JUMP
+	if Input.is_action_just_pressed("dash") and can_air_dash:
+		state = State.DASH
+		can_air_dash = false
+		dash_timer = dash_time
+		return
 
 func run_state(direction):
 	if Input.is_action_pressed("ui_down"):
@@ -132,6 +149,11 @@ func run_state(direction):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		state = State.JUMP
+	if Input.is_action_just_pressed("dash") and can_air_dash:
+		state = State.DASH
+		can_air_dash = false
+		dash_timer = dash_time
+		return
 
 
 func jump_state(direction):
@@ -144,6 +166,11 @@ func jump_state(direction):
 	
 	if Input.is_action_just_pressed("attack1"):
 		state = State.JUMP_ATTACK
+	if Input.is_action_just_pressed("dash") and can_air_dash:
+		state = State.DASH
+		can_air_dash = false
+		dash_timer = dash_time
+		return
 
 
 func fall_state(direction):
@@ -151,9 +178,16 @@ func fall_state(direction):
 	
 	velocity.x = direction * SPEED
 	
+	if Input.is_action_just_pressed("dash") and can_air_dash:
+		state = State.DASH
+		can_air_dash = false
+		dash_timer = dash_time
+		return
+	
 	if is_on_floor():
 		landing.play("landing_smoke")
 		state = State.IDLE
+	
 
 func crouch_state(direction):
 	velocity.x = direction * SPEED
@@ -210,6 +244,27 @@ func death_state():
 		animation_player.play("death")
 
 
+func dash_state(direction):
+	dash_timer -= get_physics_process_delta_time()
+	
+	if direction == 0:
+		if sprite.flip_h:
+			direction = -1
+		else:
+			direction = 1
+	
+	velocity.x = direction * (SPEED + DASH_SPEED)
+	
+	if animation_player.current_animation != "dash":
+		animation_player.play("dash")
+	
+	if dash_timer <= 0:
+		if is_on_floor():
+			state = State.IDLE
+		else:
+			state = State.FALL
+
+
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "attack":
 		state = State.IDLE
@@ -229,7 +284,6 @@ func _on_animation_player_animation_finished(anim_name):
 	
 	if anim_name == "death":
 		get_tree().reload_current_scene()
-	
 
 
 func take_damage(amount: int, from_position: Vector2):

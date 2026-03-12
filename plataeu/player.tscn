@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cmvrwurnefrj3" path="res://assets/jump.png" id="4_dw050"]
 [ext_resource type="Texture2D" uid="uid://crsi0edi3f0uq" path="res://assets/fall.png" id="4_urp6f"]
 [ext_resource type="Texture2D" uid="uid://tjaeuxnma1ft" path="res://assets/run.png" id="5_b26j0"]
+[ext_resource type="Texture2D" uid="uid://cplpuadv1vxwp" path="res://assets/dash.png" id="5_pbfsw"]
 [ext_resource type="Script" uid="uid://cikyi7m6go33k" path="res://score.gd" id="6_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://d1iaun5mfdde4" path="res://assets/crouch.png" id="6_bwjto"]
 [ext_resource type="Texture2D" uid="uid://bp10lk4i312p1" path="res://assets/crouch-attack.png" id="7_606se"]
@@ -128,6 +129,54 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sprite2D:texture")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_pbfsw")]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sprite2D:hframes")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sprite2D:vframes")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sprite2D:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_pylmc"]
@@ -404,6 +453,57 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_j5n4i"]
+resource_name = "dash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_pbfsw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.56666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
 }
 
 [sub_resource type="Animation" id="Animation_7ahtn"]
@@ -964,6 +1064,7 @@ _data = {
 &"attack": SubResource("Animation_pylmc"),
 &"crouch": SubResource("Animation_pbfsw"),
 &"crouch_attack": SubResource("Animation_5tmop"),
+&"dash": SubResource("Animation_j5n4i"),
 &"death": SubResource("Animation_7ahtn"),
 &"fall": SubResource("Animation_7lmhl"),
 &"hurt": SubResource("Animation_dx0e4"),
@@ -1086,9 +1187,9 @@ libraries/ = SubResource("AnimationLibrary_iruf7")
 autoplay = &"idle"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2030950532]
-texture = ExtResource("6_bwjto")
-hframes = 3
-frame = 2
+texture = ExtResource("5_pbfsw")
+hframes = 5
+frame = 1
 
 [node name="SmokeTrail" type="GPUParticles2D" parent="." unique_id=2132371856]
 visible = false
