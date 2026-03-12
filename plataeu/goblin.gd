@@ -103,11 +103,15 @@ func attack_state():
 
 func hurt_state():
 	velocity.x = 0
-	animation_player.play("hurt")
+	if animation_player.current_animation != "hurt":
+		animation_player.play("hurt")
 
 func death_state():
+	
 	velocity = Vector2.ZERO
-	animation_player.play("death")
+	print("dying")
+	if animation_player.current_animation != "death":
+		animation_player.play("death")
 
 func turn():
 	direction *= -1
@@ -131,7 +135,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		else:
 			state = State.IDLE
 	
-	if anim_name == "hurt":
+	if anim_name == "hurt" and state != State.DEATH:
 		if is_on_floor():
 			state = State.CHASE
 	
@@ -143,13 +147,16 @@ func take_damage(amount: int, from_position: Vector2):
 		return
 	
 	health -= amount
+	print(health)
 	
 	if health <= 0:
+		print("death")
 		state = State.DEATH
 		return
 	
 	invulnerable = true
-	state = State.HURT
+	if state != State.DEATH:
+		state = State.HURT
 	
 	var direction = sign(global_position.x - from_position.x)
 	
@@ -160,18 +167,24 @@ func take_damage(amount: int, from_position: Vector2):
 	invulnerable = false
 
 func _on_hitbox_body_entered(body) -> void:
+	if state == State.DEATH:
+		return
 	if body.name == "Player":
 		state = State.ATTACK
 
 
 func _on_detection_box_body_entered(body: Node2D) -> void:
+	if state == State.DEATH:
+		return
 	if body.name == "Player":
 		player = body
 		state = State.CHASE
 
 func _on_detection_box_body_exited(body: Node2D) -> void:
-	state = State.IDLE
+	if state != State.DEATH:
+		state = State.IDLE
 
 func _on_attack_range_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		state = State.ATTACK
+	if state != State.DEATH:
+		if body.name == "Player":
+			state = State.ATTACK
