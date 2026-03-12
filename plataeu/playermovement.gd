@@ -1,8 +1,10 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 const SPEED = 300.0
 const DASH_SPEED = 400.0
 const JUMP_VELOCITY = -400.0
+
+signal healthChanged
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
@@ -29,14 +31,21 @@ enum State {
 	DASH
 }
 
+@export var maxHealth = 100
+var currenHealth : int
+
+
 var state: State = State.IDLE
-var health = 100
 var invulnerable = false
 var crouch_pressed = false
 var dash_time = 0.2
 var dash_timer = 0.0
 var can_air_dash = true
 
+
+func _ready():
+	currenHealth = maxHealth
+	healthChanged.emit()
 
 func _process(delta: float) -> void:
 	if velocity.length() > 10 and is_on_floor():
@@ -290,11 +299,13 @@ func take_damage(amount: int, from_position: Vector2):
 	if invulnerable or state == State.DEATH:
 		return
 	
-	health -= amount
+	currenHealth -= amount
 	
-	if health <= 0:
+	if currenHealth <= 0:
 		state = State.DEATH
 		return
+	
+	healthChanged.emit()
 	
 	invulnerable = true
 	state = State.HURT
