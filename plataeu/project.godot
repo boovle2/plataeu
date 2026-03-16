@@ -14,6 +14,10 @@ config/name="plataeu"
 run/main_scene="uid://df8dbb8rmtbs8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[autoload]
+
+global="*uid://ca42uroluuu1x"
+
 [display]
 
 window/stretch/mode="viewport"
