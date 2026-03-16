@@ -109,7 +109,6 @@ func hurt_state():
 func death_state():
 	
 	velocity = Vector2.ZERO
-	print("dying")
 	if animation_player.current_animation != "death":
 		animation_player.play("death")
 
@@ -147,10 +146,8 @@ func take_damage(amount: int, from_position: Vector2):
 		return
 	
 	health -= amount
-	print(health)
 	
 	if health <= 0:
-		print("death")
 		state = State.DEATH
 		return
 	
