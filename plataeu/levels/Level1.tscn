@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://djpro1qqmhur" path="res://coins/coin2.tscn" id="9_nn0v1"]
 [ext_resource type="PackedScene" uid="uid://bvfeu34wtavki" path="res://coins/coin3.tscn" id="10_kdcll"]
 [ext_resource type="PackedScene" uid="uid://blf5a41gehrp" path="res://coins/coin1.tscn" id="11_j4pg1"]
+[ext_resource type="PackedScene" uid="uid://bl1j5ps0kvic2" path="res://portal.tscn" id="12_kdcll"]
+[ext_resource type="PackedScene" uid="uid://br1pby7eqktui" path="res://confetti.tscn" id="13_j4pg1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlbie"]
 texture = ExtResource("1_kyxg0")
@@ -1410,3 +1412,9 @@ position = Vector2(880, 149)
 
 [node name="spikes" parent="." unique_id=1447488988 instance=ExtResource("8_dkril")]
 position = Vector2(733, 364)
+
+[node name="Portal" parent="." unique_id=1744619193 instance=ExtResource("12_kdcll")]
+position = Vector2(1088, 363)
+
+[node name="GPUParticles2D" parent="." unique_id=511871594 instance=ExtResource("13_j4pg1")]
+position = Vector2(1088, 363)
