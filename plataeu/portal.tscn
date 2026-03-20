@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://bl1j5ps0kvic2"]
+[gd_scene format=3 uid="uid://b5w3cln0y1mnt"]
 
 [ext_resource type="Script" uid="uid://bpcwhvnbrm7kf" path="res://portal.gd" id="1_ef3v5"]
 [ext_resource type="Texture2D" uid="uid://doywtkbd7ljtk" path="res://assets/Environment/Dimensional_Portal.png" id="2_grrij"]
+[ext_resource type="PackedScene" path="res://confetti.tscn" id="3_grrij"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6r214"]
 atlas = ExtResource("2_grrij")
@@ -69,6 +70,8 @@ shape = SubResource("CapsuleShape2D_3x30s")
 
 [node name="Timer" type="Timer" parent="." unique_id=463417410]
 wait_time = 0.5
+
+[node name="GPUParticles2D" parent="." unique_id=511871594 instance=ExtResource("3_grrij")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

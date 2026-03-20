@@ -107,8 +107,8 @@ func hurt_state():
 		animation_player.play("hurt")
 
 func death_state():
-	
 	velocity = Vector2.ZERO
+	
 	if animation_player.current_animation != "death":
 		animation_player.play("death")
 

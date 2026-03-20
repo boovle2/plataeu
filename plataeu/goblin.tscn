@@ -564,7 +564,6 @@ debug_color = Color(0.85882354, 0, 0, 0.41960785)
 [node name="DetectionBox" type="Area2D" parent="." unique_id=1367089659]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionBox" unique_id=606754518]
-visible = false
 shape = SubResource("CircleShape2D_6nebt")
 debug_color = Color(0.04840435, 0.65052646, 1.92523e-07, 0.41960785)
 

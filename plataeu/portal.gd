@@ -1,12 +1,15 @@
 extends Area2D
 
-@onready var gpu_particles_2d: GPUParticles2D = $"../GPUParticles2D"
+#@onready var gpu_particles_2d: GPUParticles2D = $"../GPUParticles2D"
 @onready var timer: Timer = $Timer
+@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
+
 
 
 
 func _on_body_entered(_body: Node2D) -> void:
-	$"../GPUParticles2D".restart()
+	#$"../GPUParticles2D".restart()
+	gpu_particles_2d.restart()
 	$Timer.start()
 
 
