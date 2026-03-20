@@ -47,7 +47,7 @@ func _ready():
 	currenHealth = maxHealth
 	healthChanged.emit()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if velocity.length() > 10 and is_on_floor():
 		smoke_trail.emitting = true
 	else:

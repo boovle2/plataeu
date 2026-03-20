@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://caq6hws2mvsbl"]
+
+[ext_resource type="Script" uid="uid://40ekkds6otgp" path="res://pause_menu.gd" id="1_hdmo1"]
+
+[node name="pause menu" type="Control" unique_id=1063649184]
+process_mode = 3
+visible = false
+z_index = 1000
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hdmo1")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1057722941]
+layout_mode = 0
+offset_right = 14.0
+offset_bottom = 20.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1976568044]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=445593115]
+layout_mode = 2
+text = "resume"
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1394096721]
+layout_mode = 2
+text = "restart"
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer" unique_id=986828563]
+layout_mode = 2
+text = "menu"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]

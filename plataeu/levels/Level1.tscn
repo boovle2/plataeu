@@ -1481,11 +1481,19 @@ position = Vector2(360, 364)
 [node name="Portal" parent="." unique_id=1744619193 instance=ExtResource("12_kdcll")]
 position = Vector2(1215, 575)
 
-[node name="Goblin" parent="." unique_id=1554246127 instance=ExtResource("14_nu2w0")]
-position = Vector2(557, 122)
+[node name="GPUParticles2D" parent="." unique_id=511871594 instance=ExtResource("13_j4pg1")]
+position = Vector2(1088, 363)
 
-[node name="Goblin2" parent="." unique_id=1632998603 instance=ExtResource("14_nu2w0")]
-position = Vector2(1912, 400)
+[node name="coins" type="Node" parent="." unique_id=1588233404]
 
-[node name="Goblin3" parent="." unique_id=2025866227 instance=ExtResource("14_nu2w0")]
-position = Vector2(1984, 400)
+[node name="Coin1" parent="coins" unique_id=2002110279 instance=ExtResource("11_j4pg1")]
+position = Vector2(742, 330)
+
+[node name="Coin4" parent="coins" unique_id=446036332 instance=ExtResource("11_j4pg1")]
+position = Vector2(880, 149)
+
+[node name="Coin2" parent="coins" unique_id=590068717 instance=ExtResource("9_nn0v1")]
+position = Vector2(360, 364)
+
+[node name="Coin3" parent="coins" unique_id=1578638125 instance=ExtResource("10_kdcll")]
+position = Vector2(561, 353)
