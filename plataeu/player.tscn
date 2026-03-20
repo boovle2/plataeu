@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://cplpuadv1vxwp" path="res://assets/dash.png" id="5_pbfsw"]
 [ext_resource type="Script" uid="uid://cikyi7m6go33k" path="res://score.gd" id="6_2hs0m"]
 [ext_resource type="Texture2D" uid="uid://d1iaun5mfdde4" path="res://assets/crouch.png" id="6_bwjto"]
+[ext_resource type="PackedScene" uid="uid://caq6hws2mvsbl" path="res://pause_menu.tscn" id="6_dx0e4"]
 [ext_resource type="Texture2D" uid="uid://bp10lk4i312p1" path="res://assets/crouch-attack.png" id="7_606se"]
+[ext_resource type="Script" uid="uid://belluuvmy3cwm" path="res://timer.gd" id="7_jm5j8"]
 [ext_resource type="PackedScene" uid="uid://cvtr1clwenoyt" path="res://hurtbox.tscn" id="8_dw050"]
 [ext_resource type="Texture2D" uid="uid://b883wynj0vwwt" path="res://assets/death.png" id="8_u1c27"]
 [ext_resource type="Texture2D" uid="uid://dkwe5ma4t2odn" path="res://assets/jump-attack.png" id="12_op7ga"]
@@ -1166,6 +1168,19 @@ texture_under = ExtResource("3_7ahtn")
 texture_progress = ExtResource("4_7lmhl")
 script = ExtResource("5_7lmhl")
 player = NodePath("../..")
+
+[node name="pause menu" parent="Camera2D" unique_id=1063649184 instance=ExtResource("6_dx0e4")]
+offset_left = -34.0
+offset_top = -112.0
+offset_right = -34.0
+offset_bottom = -112.0
+
+[node name="timer" type="Label" parent="Camera2D" unique_id=18048847]
+offset_left = 138.0
+offset_top = -148.0
+offset_right = 171.0
+offset_bottom = -125.0
+script = ExtResource("7_jm5j8")
 
 [node name="hitbox" parent="." unique_id=1756588890 instance=ExtResource("3_pylmc")]
 

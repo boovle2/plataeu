@@ -1398,18 +1398,6 @@ position = Vector2(155, 312)
 position = Vector2(375, 494)
 shape = SubResource("WorldBoundaryShape2D_5py54")
 
-[node name="Coin2" parent="." unique_id=590068717 instance=ExtResource("9_nn0v1")]
-position = Vector2(360, 364)
-
-[node name="Coin3" parent="." unique_id=1578638125 instance=ExtResource("10_kdcll")]
-position = Vector2(561, 353)
-
-[node name="Coin1" parent="." unique_id=2002110279 instance=ExtResource("11_j4pg1")]
-position = Vector2(742, 330)
-
-[node name="Coin4" parent="." unique_id=446036332 instance=ExtResource("11_j4pg1")]
-position = Vector2(880, 149)
-
 [node name="spikes" parent="." unique_id=1447488988 instance=ExtResource("8_dkril")]
 position = Vector2(733, 364)
 
@@ -1418,3 +1406,17 @@ position = Vector2(1088, 363)
 
 [node name="GPUParticles2D" parent="." unique_id=511871594 instance=ExtResource("13_j4pg1")]
 position = Vector2(1088, 363)
+
+[node name="coins" type="Node" parent="." unique_id=1588233404]
+
+[node name="Coin1" parent="coins" unique_id=2002110279 instance=ExtResource("11_j4pg1")]
+position = Vector2(742, 330)
+
+[node name="Coin4" parent="coins" unique_id=446036332 instance=ExtResource("11_j4pg1")]
+position = Vector2(880, 149)
+
+[node name="Coin2" parent="coins" unique_id=590068717 instance=ExtResource("9_nn0v1")]
+position = Vector2(360, 364)
+
+[node name="Coin3" parent="coins" unique_id=1578638125 instance=ExtResource("10_kdcll")]
+position = Vector2(561, 353)

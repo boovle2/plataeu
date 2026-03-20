@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://byfkjkoul3dq4"]
 
-[ext_resource type="Script" path="res://level_2.gd" id="1_p5th2"]
 [ext_resource type="Texture2D" uid="uid://dq8yt8j27f8ak" path="res://assets/Environment/tileset.png" id="2_v0cbu"]
 [ext_resource type="Texture2D" uid="uid://ctoieaugchjdl" path="res://assets/Environment/clouds.png" id="3_xcmrh"]
 [ext_resource type="Texture2D" uid="uid://oyms3r5wakso" path="res://assets/Environment/far-grounds.png" id="4_28og2"]
@@ -4042,7 +4041,6 @@ sources/9 = SubResource("TileSetAtlasSource_605o7")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mgfd6"]
 
 [node name="Level2" type="Node2D" unique_id=363612947]
-script = ExtResource("1_p5th2")
 
 [node name="TileMap" type="Node" parent="." unique_id=382269580]
 
