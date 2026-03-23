@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://djpro1qqmhur" path="res://coins/coin2.tscn" id="9_gwanj"]
 [ext_resource type="PackedScene" uid="uid://blf5a41gehrp" path="res://coins/coin1.tscn" id="10_nn1ti"]
 [ext_resource type="PackedScene" uid="uid://bvfeu34wtavki" path="res://coins/coin3.tscn" id="11_vfe3a"]
-[ext_resource type="PackedScene" path="res://portal.tscn" id="12_v0cbu"]
-[ext_resource type="PackedScene" path="res://confetti.tscn" id="13_xcmrh"]
+[ext_resource type="PackedScene" uid="uid://b5w3cln0y1mnt" path="res://portal.tscn" id="12_v0cbu"]
+[ext_resource type="PackedScene" uid="uid://br1pby7eqktui" path="res://confetti.tscn" id="13_xcmrh"]
 [ext_resource type="PackedScene" uid="uid://qsf5luod57b6" path="res://spikes.tscn" id="14_28og2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fvkd4"]
